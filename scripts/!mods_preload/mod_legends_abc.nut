@@ -18,4 +18,10 @@
             ::include(file);
         }
     }
+
+	// MSU Logging Convenience
+	::LABC.Mod.Debug.enable();
+	::LABC.log <- ::LABC.Mod.Debug.printLog;
+	::LABC.logWarning <- ::LABC.Mod.Debug.printWarning;
+	::LABC.logError <- ::LABC.Mod.Debug.printError;
 });
