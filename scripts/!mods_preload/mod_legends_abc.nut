@@ -11,13 +11,14 @@
 	::LABC.Mod.Registry.addModSource(::MSU.System.Registry.ModSourceDomain.GitHub, "https://github.com/Hanter-19/bb-legends-abc");
 	::LABC.Mod.Registry.setUpdateSource(::MSU.System.Registry.ModSourceDomain.GitHub);
 
-    foreach (dir in [
-        "mod_legends_abc/hooks"
-    ]) {
-        foreach (file in ::IO.enumerateFiles(dir)) {
-            ::include(file);
-        }
-    }
+	foreach (dir in [
+		"mod_legends_abc/helper",
+		"mod_legends_abc/hooks"
+	]) {
+		foreach (file in ::IO.enumerateFiles(dir)) {
+			::include(file);
+		}
+	}
 
 	// MSU Logging Convenience
 	::LABC.Mod.Debug.enable();
