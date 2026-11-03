@@ -20,6 +20,20 @@
 		}
 	}
 
+	// Tests
+	local runTests = false; // hardcode for now
+	if (runTests) {
+		::LABC.Test <- {};
+		foreach (dir in [
+			"test/hooks",
+			"test/scripts"
+		]) {
+			foreach (file in ::IO.enumerateFiles(dir)) {
+				::include(file);
+			}
+		}
+	}
+	
 	// MSU Logging Convenience
 	::LABC.Mod.Debug.enable();
 	::LABC.log <- ::LABC.Mod.Debug.printLog;
